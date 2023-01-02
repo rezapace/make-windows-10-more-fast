@@ -30,3 +30,7 @@ LINK SOURCE
 
 https://github.com/W4RH4WK/Debloat-Windows-10
 https://drive.google.com/file/d/108hUshW0v-s3yjjWCAK0Zhmu5TZ0Mk_W/view
+
+optimasi.reg 
+berfungsi untuk mempercepat loading dan entask
+https://itnesia.com/cara-mempercepat-windows-10-dengan-regedit/
