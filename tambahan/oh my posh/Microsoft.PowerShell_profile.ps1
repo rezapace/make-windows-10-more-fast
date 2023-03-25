@@ -363,6 +363,74 @@ function j {
     # Execute PowerShell command 'z' with the directory name
     Invoke-Expression "z $DirectoryName"
 }
+function linuxstop {
+    wsl --shutdown Ubuntu-20.04
+}
+function linuxstat {
+    wsl --list -v
+}
+function cirun {
+    php spark serve
+}
+function cp {
+    # Get current PowerShell directory
+    $currentDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+    # Ask for file name to copy
+    $fileName = Read-Host "Enter the file name to copy"
+
+    # Construct full source file path
+    $sourceFilePath = Join-Path $currentDir $fileName
+
+    # Check if source file exists
+    if (-not (Test-Path $sourceFilePath)) {
+        Write-Host "Error: $fileName not found in $currentDir" -ForegroundColor Red
+        return
+    }
+    # Ask for destination file name
+    $destFileName = Read-Host "Enter the destination file name"
+
+    # Construct full destination file path
+    $destFilePath = Join-Path $currentDir $destFileName
+
+    # Copy file to destination
+    Copy-Item $sourceFilePath $destFilePath
+
+    if (Test-Path $destFilePath) {
+        Write-Host "$fileName copied to $destFilePath" -ForegroundColor Green
+    } else {
+        Write-Host "Error: $fileName copy to $destFilePath failed" -ForegroundColor Red
+    }
+}
+function mv {
+    # Get current PowerShell directory
+    $currentDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+    # Ask for file name to move
+    $fileName = Read-Host "Enter the file name to move"
+
+    # Construct full source file path
+    $sourceFilePath = Join-Path $currentDir $fileName
+
+    # Check if source file exists
+    if (-not (Test-Path $sourceFilePath)) {
+        Write-Host "Error: $fileName not found in $currentDir" -ForegroundColor Red
+        return
+    }
+
+    # Ask for destination file name
+    $destFileName = Read-Host "Enter the destination file name"
+
+    # Construct full destination file path
+    $destFilePath = Join-Path $currentDir $destFileName
+
+    # Move file to destination
+    Move-Item $sourceFilePath $destFilePath
+
+    Write-Host "$fileName moved to $destFilePath"
+}
+
+
 
 
 
@@ -398,6 +466,11 @@ function lupa {
     Write-Host "opdf        = mengoptimasi file pdf" -ForegroundColor Yellow
     Write-Host "p2w         = mengubah file pdf ke word direktory dan nama pdf" -ForegroundColor Yellow
     Write-Host "j           = j($name) menuju folder" -ForegroundColor Yellow
+    Write-Host "linuxstop   = menghentikan linux" -ForegroundColor Yellow
+    Write-Host "linuxstat   = mengecek status linux" -ForegroundColor Yellow
+    Write-Host "cirun       = menjalankan codeigniter" -ForegroundColor Yellow
+    Write-Host "cp          = cp($name) menyalin file" -ForegroundColor Yellow
+    Write-Host "mv          = mv($name) memindahkan file" -ForegroundColor Yellow
 }
 
 
