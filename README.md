@@ -1,46 +1,61 @@
-# make-windows-10-more-fast
-dengan cara menghapus file blotware serta tweak pada sistem operasi windos nya tanpa ada nya over clock
+# Make Windows 10 Faster
 
-1)	PINDAHKAN FILE SCRIP KE LOCAL DISK C
-2)	BUKA POWERSHELL (RUN ADMINIST TRATOR)
-3)	KETIK ( CD C:\ ) ENTER
-4)	KETIK ( Set-ExecutionPolicy Unrestricted -Scope CurrentUser ) ENTER
-5)	KETIK ( A )
-6)	KETIK ( ls -Recurse *.ps*1 | Unblock-File ) ENTER ( INI LUMAYAN LAMA )
-7)	KETIK ( CD SCRIPTS )
-8)	KETIK ( .\NAMA-SCRIPTS ) CONTOH ( .\block-telemetry.ps1 ) ENTER CARA CEPAT BISA PENCET TAB 
-9)	.\block-telemetry.ps1			( NGUMPULIN DATA YANG DI UPLOD KE MICROSOFT )
-	
-	.\disable-services.ps1			( DISABLE SERVICE YANG DI BUTUHKAN TELEMETRY )
-	
-	.\disable-windows-defender.ps1		( MENGHILANGKAN WINDOWS DEVENDER )
-	
-	.\experimental_unfuckery.ps1		( DISABLE APLIKASI DI PRODUC DAN CORTANA )
-	
-	.\fix-privacy-settings.ps1		( DISABLE APLIKASI BAWAAN WINDOWS KAYA PRIVASI LOKASI DLL )
-	
-	.\optimize-user-interface.ps1		( MEMPERCEPAT WINDOWS MENGHILANGKAN ANIMASI )
-	
-	.\optimize-windows-update.ps1		( WINDOWS UPDATE TP NGASI NOTIFIKASI NGAK AUTO DOWNLOAD )
-	
-	.\remove-default-apps.ps1		( MENGAHAPUS SOFTWARE YANG JARANG DI GUNAKAN SISA NYA UNINSTAL MANUAL )
-	
-	.\remove-onedrive.ps1			( DISABLE ONEDRIVE )
+Optimize your Windows 10 by removing bloatware and tweaking the operating system without overclocking.
 
-iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JJ8R4'))
+## Description
 
-iwr -useb https://christitus.com/win | iex
+This guide provides steps to enhance the performance of Windows 10 by removing unnecessary files and services, and optimizing system settings. Follow the instructions carefully to achieve a faster and more efficient Windows 10 experience.
 
-10)	RUN AS ADMINIST TRATOR ( Windows10 Boost.bat ) ( MEMBERSIHKAN FILE FILE SISA YANG TIDAK BERGUNA )
-11)	DOWNLOAD MICROSOFT PHOTOS ( https://www.microsoft.com/store/productId/9WZDNCRFJBH4 )
-12) RESTART
+## Steps
 
-iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JJ8R4'))
+1. **Move Script Files to Local Disk C:**
+   - Transfer the script files to the root of Local Disk C.
 
-LINK SOURCE
+2. **Open PowerShell as Administrator:**
+   - Right-click on PowerShell and select "Run as Administrator".
 
-https://github.com/ChrisTitusTech/winutil
+3. **Navigate to Local Disk C:**
+   - Type `CD C:\` and press Enter.
 
-https://github.com/W4RH4WK/Debloat-Windows-10
+4. **Set Execution Policy:**
+   - Type `Set-ExecutionPolicy Unrestricted -Scope CurrentUser` and press Enter.
+   - Type `A` and press Enter to confirm.
 
-https://drive.google.com/file/d/108hUshW0v-s3yjjWCAK0Zhmu5TZ0Mk_W/view
+5. **Unblock Script Files:**
+   - Type `ls -Recurse *.ps*1 | Unblock-File` and press Enter. (This may take some time)
+
+6. **Navigate to Scripts Directory:**
+   - Type `CD SCRIPTS` and press Enter.
+
+7. **Run the Desired Script:**
+   - Type `.\NAMA-SCRIPTS` and press Enter. For example, `.\block-telemetry.ps1` and press Enter. You can use the Tab key for auto-completion.
+
+8. **Available Scripts:**
+   - `.\block-telemetry.ps1` (Collects data uploaded to Microsoft)
+   - `.\disable-services.ps1` (Disables services required for telemetry)
+   - `.\disable-windows-defender.ps1` (Disables Windows Defender)
+   - `.\experimental_unfuckery.ps1` (Disables Cortana and other built-in apps)
+   - `.\fix-privacy-settings.ps1` (Disables built-in Windows apps like location privacy, etc.)
+   - `.\optimize-user-interface.ps1` (Speeds up Windows by removing animations)
+   - `.\optimize-windows-update.ps1` (Windows Update with notifications, no auto-download)
+   - `.\remove-default-apps.ps1` (Removes rarely used software, the rest can be uninstalled manually)
+   - `.\remove-onedrive.ps1` (Disables OneDrive)
+
+9. **Run Additional Commands:**
+   - `iex ((New-Object System.Net.WebClient).DownloadString('https://git.io/JJ8R4'))`
+   - `iwr -useb https://christitus.com/win | iex`
+
+10. **Run Windows10 Boost.bat as Administrator:**
+    - This cleans up unnecessary residual files.
+
+11. **Download Microsoft Photos:**
+    - [Microsoft Photos](https://www.microsoft.com/store/productId/9WZDNCRFJBH4)
+
+12. **Restart:**
+    - Restart your computer to apply all changes.
+
+## Additional Resources
+
+- [ChrisTitusTech Winutil](https://github.com/ChrisTitusTech/winutil)
+- [W4RH4WK Debloat-Windows-10](https://github.com/W4RH4WK/Debloat-Windows-10)
+- [Google Drive Source](https://drive.google.com/file/d/108hUshW0v-s3yjjWCAK0Zhmu5TZ0Mk_W/view)
